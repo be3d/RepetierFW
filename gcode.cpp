@@ -261,7 +261,7 @@ void GCode::checkAndPushCommand()
         return; // omit ok
 #endif
 #if ACK_WITH_LINENUMBER
-    Com::printFLN(Com::tOkSpace, actLineNumber);
+    Com::printFLN(Com::tOkSpaceN, actLineNumber);
 #else
     Com::printFLN(Com::tOk);
 #endif

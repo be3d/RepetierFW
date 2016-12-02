@@ -1192,7 +1192,7 @@ GCode::executeFString(Com::tStartupGCode);
  Com::printF(Com::tFirm);
  Com::printFLN(Com::tVersion);
  Com::printF(Com::tEcho2);
- Com::printF(Com::tExternalReset2);
+ Com::printFLN(Com::tExternalReset2);
 // end of myline   
 }
 
@@ -1606,7 +1606,7 @@ void Printer::homeZAxis() // Cartesian homing
         PrintLine::moveRelativeDistanceInSteps(0,0,axisStepsPerMM[Z_AXIS] * 2 * ENDSTOP_Z_BACK_MOVE * Z_HOME_DIR,0,homingFeedrate[Z_AXIS] / ENDSTOP_Z_RETEST_REDUCTION_FACTOR,true,true);
         setHoming(false);
 
-        HAL::servoMicroseconds(0,600,2000);
+        HAL::servoMicroseconds(0,SERVO0_NEUTRAL_POS,2000); //doresit
 
 		int32_t zCorrection = 0;
 #if Z_HOME_DIR < 0 && MIN_HARDWARE_ENDSTOP_Z && FEATURE_Z_PROBE && Z_PROBE_PIN == Z_MIN_PIN

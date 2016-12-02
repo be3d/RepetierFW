@@ -175,8 +175,8 @@ typedef uint8_t ufast8_t;
   Modified to use only 1 queue with fixed length by Repetier
 */
 
-#define SERIAL_BUFFER_SIZE 128
-#define SERIAL_BUFFER_MASK 127
+#define SERIAL_BUFFER_SIZE 128//2048//128
+#define SERIAL_BUFFER_MASK 127//2047//127
 #undef SERIAL_TX_BUFFER_SIZE
 #undef SERIAL_TX_BUFFER_MASK
 #ifdef BIG_OUTPUT_BUFFER

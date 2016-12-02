@@ -46,9 +46,10 @@ FSTRINGVALUE(Com::tINF,"INF")
 FSTRINGVALUE(Com::tError,"Error:")
 FSTRINGVALUE(Com::tInfo,"Info:")
 FSTRINGVALUE(Com::tWarning,"Warning:")
-FSTRINGVALUE(Com::tResend,"Resend:")
+FSTRINGVALUE(Com::tResend,"Resend: ") // přidána mezera
 FSTRINGVALUE(Com::tEcho,"Echo:")
 FSTRINGVALUE(Com::tOkSpace,"ok ")
+FSTRINGVALUE(Com::tOkSpaceN,"ok N")
 FSTRINGVALUE(Com::tWrongChecksum,"Wrong checksum")
 FSTRINGVALUE(Com::tMissingChecksum,"Missing checksum")
 FSTRINGVALUE(Com::tFormatError,"Format error")
@@ -99,6 +100,11 @@ FSTRINGVALUE(Com::tEcho2,"echo:")
 FSTRINGVALUE(Com::tExternalReset2," External Reset")
 FSTRINGVALUE(Com::tDefaultZOffset," default Z offset: ")
 FSTRINGVALUE(Com::tActualZOffset," actual Z offset: ")
+FSTRINGVALUE(Com::tTacho_ext,"E0: ")
+FSTRINGVALUE(Com::tTacho_num,"0.00")
+FSTRINGVALUE(Com::tEndPrint,"X:0Y:0Z:0E:0 Count X: 0Y:0Z:0")
+
+
 
 //end of myline
 #if JSON_OUTPUT

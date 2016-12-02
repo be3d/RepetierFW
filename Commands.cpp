@@ -961,6 +961,7 @@ void Commands::processGCode(GCode *com) {
 				bool oldLaser = LaserDriver::laserOn;
 			    LaserDriver::laserOn = false;
 #endif				
+                Printer::moveTo(IGNORE_COORDINATE,IGNORE_COORDINATE,50,IGNORE_COORDINATE, HOMING_FEEDRATE_Z); //přidáno odjetí stolu před homingem
                 uint8_t homeAllAxis = (com->hasNoXYZ() && !com->hasE());
                 if(com->hasE())
                     Printer::currentPositionSteps[E_AXIS] = 0;
@@ -1723,6 +1724,17 @@ void Commands::processMCode(GCode *com) {
             }
 #endif
             break;
+
+        case 123: // M123 Get extruder tachometer
+
+                Com::printF(Com::tTacho_ext);
+                Com::printFLN(Com::tTacho_num);
+
+
+
+
+            break;
+
         case 140: // M140 set bed temp
             if(reportTempsensorError()) break;
             previousMillisCmd = HAL::timeInMilliseconds();
@@ -1824,6 +1836,7 @@ void Commands::processMCode(GCode *com) {
             break;
         case 114: // M114
             printCurrentPosition(PSTR("M114 "));
+            Com::printFLN(Com::tEndPrint); // přidán výpis kvůli ukončení tisku a otevření dveří
             break;
         case 117: // M117 message to lcd
             if(com->hasString()) {

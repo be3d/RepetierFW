@@ -269,7 +269,7 @@ controlled by settings in extruder 0 definition. */
 #define EXT0_STEP_PIN E0_STEP_PIN
 #define EXT0_DIR_PIN E0_DIR_PIN
 // set to false/true for normal / inverse direction
-#define EXT0_INVERSE 0
+#define EXT0_INVERSE 1//1
 #define EXT0_ENABLE_PIN E0_ENABLE_PIN
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
 #define EXT0_ENABLE_ON 0
@@ -283,7 +283,7 @@ controlled by settings in extruder 0 definition. */
 // length of filament pulled inside the heater. For repsnap or older
 // skeinforge use higher values.
 //  Overridden if EEPROM activated.
-#define EXT0_MAX_FEEDRATE 30
+#define EXT0_MAX_FEEDRATE 45
 // Feedrate from halted extruder in mm/s
 //  Overridden if EEPROM activated.
 #define EXT0_MAX_START_FEEDRATE 10
@@ -699,7 +699,7 @@ Value is used for all generic tables created. */
 
 // Select type of your heated bed. It's the same as for EXT0_TEMPSENSOR_TYPE
 // set to 0 if you don't have a heated bed
-#define HEATED_BED_SENSOR_TYPE 1
+#define HEATED_BED_SENSOR_TYPE 0
 /** Analog pin of analog sensor to read temperature of heated bed.  */
 #define HEATED_BED_SENSOR_PIN TEMP_1_PIN
 /** \brief Pin to enable heater for bed. */
@@ -861,9 +861,9 @@ on this endstop.
 
 // Inverting motor direction. Only in case of pure cartesian printers, this
 // is also the axis you invert!
-#define INVERT_X_DIR false
-#define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_X_DIR false//false
+#define INVERT_Y_DIR true//true
+#define INVERT_Z_DIR false//false
 
 //// ENDSTOP SETTINGS:
 // Sets direction of endstops when homing; 1=MAX, -1=MIN
@@ -1059,14 +1059,14 @@ Mega. Used only for nonlinear systems like delta or tuga. */
     The axis order in all axis related arrays is X, Y, Z
      Overridden if EEPROM activated.
     */
-#define MAX_FEEDRATE_X 200
-#define MAX_FEEDRATE_Y 200
-#define MAX_FEEDRATE_Z 5
+#define MAX_FEEDRATE_X 150
+#define MAX_FEEDRATE_Y 150
+#define MAX_FEEDRATE_Z 12
 
 /** Home position speed in mm/s. Overridden if EEPROM activated. */
-#define HOMING_FEEDRATE_X 80
-#define HOMING_FEEDRATE_Y 80
-#define HOMING_FEEDRATE_Z 3
+#define HOMING_FEEDRATE_X 40
+#define HOMING_FEEDRATE_Y 40
+#define HOMING_FEEDRATE_Z 12
 
 /** Set order of axis homing. Use HOME_ORDER_XYZ and replace XYZ with your order. 
  * If you measure Z with your extruder tip you need a hot extruder to get right measurement. In this
@@ -1355,7 +1355,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define SERVO2_PIN -1//5
 #define SERVO3_PIN -1//4
 /* for set servo(s) at designed neutral position at power-up. Values < 500 mean no start position */
-#define SERVO0_NEUTRAL_POS  600
+#define SERVO0_NEUTRAL_POS  600//600
 #define SERVO1_NEUTRAL_POS  -1
 #define SERVO2_NEUTRAL_POS  -1
 #define SERVO3_NEUTRAL_POS  -1
@@ -1405,11 +1405,11 @@ to recalibrate z.
 #define Z_PROBE_SPEED 8 //2
 #define Z_PROBE_XY_SPEED 80
 #define Z_PROBE_SWITCHING_DISTANCE 1.5 // Distance to safely switch off probe after it was activated
-#define Z_PROBE_REPETITIONS 5 // Repetitions for probing at one point.
+#define Z_PROBE_REPETITIONS 2 //5 Repetitions for probing at one point.
 /** Distance between nozzle and bed when probe triggers. */
  //menší hodnota = dál od podložky
  //čím větší číslo tím menší mezera mezi podložkou a tryskou
-#define Z_PROBE_HEIGHT 19.57//19.8//19.3 //-21.55
+#define Z_PROBE_HEIGHT 19.9//19.57//19.8//19.3 //-21.55
 /** These scripts are run before resp. after the z-probe is done. Add here code to activate/deactivate probe if needed. */
 #define Z_PROBE_START_SCRIPT "M340 P0 S2500"
 #define Z_PROBE_FINISHED_SCRIPT "M340 P0 S610 R1000"
@@ -1463,7 +1463,7 @@ motorized bed leveling */
    This feature requires a working z-probe and you should have z-endstop at the top not at the bottom.
    The same 3 points are used for the G29 command.
 */
-#define FEATURE_AUTOLEVEL 1
+#define FEATURE_AUTOLEVEL 1//1          autobedleveling on/off
 #define Z_PROBE_X1 0//50
 #define Z_PROBE_Y1 50//50
 #define Z_PROBE_X2 0//550
