@@ -887,13 +887,13 @@ on this endstop.
 // If during homing the endstop is reached, ho many mm should the printer move back for the second try
 #define ENDSTOP_X_BACK_MOVE 5
 #define ENDSTOP_Y_BACK_MOVE 5
-#define ENDSTOP_Z_BACK_MOVE 2
+#define ENDSTOP_Z_BACK_MOVE 15
 
 // For higher precision you can reduce the speed for the second test on the endstop
 // during homing operation. The homing speed is divided by the value. 1 = same speed, 2 = half speed
 #define ENDSTOP_X_RETEST_REDUCTION_FACTOR 2
 #define ENDSTOP_Y_RETEST_REDUCTION_FACTOR 2
-#define ENDSTOP_Z_RETEST_REDUCTION_FACTOR 2
+#define ENDSTOP_Z_RETEST_REDUCTION_FACTOR 1
 
 // When you have several endstops in one circuit you need to disable it after homing by moving a
 // small amount back. This is also the case with H-belt systems.
@@ -1061,12 +1061,12 @@ Mega. Used only for nonlinear systems like delta or tuga. */
     */
 #define MAX_FEEDRATE_X 150
 #define MAX_FEEDRATE_Y 150
-#define MAX_FEEDRATE_Z 12
+#define MAX_FEEDRATE_Z 30
 
 /** Home position speed in mm/s. Overridden if EEPROM activated. */
 #define HOMING_FEEDRATE_X 40
 #define HOMING_FEEDRATE_Y 40
-#define HOMING_FEEDRATE_Z 12
+#define HOMING_FEEDRATE_Z 30
 
 /** Set order of axis homing. Use HOME_ORDER_XYZ and replace XYZ with your order. 
  * If you measure Z with your extruder tip you need a hot extruder to get right measurement. In this
@@ -1402,14 +1402,14 @@ to recalibrate z.
 // This is needful if you have the probe trigger by hand.
 #define Z_PROBE_WAIT_BEFORE_TEST 0
 /** Speed of z-axis in mm/s when probing */
-#define Z_PROBE_SPEED 8 //2
+#define Z_PROBE_SPEED 30 //2
 #define Z_PROBE_XY_SPEED 80
-#define Z_PROBE_SWITCHING_DISTANCE 1.5 // Distance to safely switch off probe after it was activated
+#define Z_PROBE_SWITCHING_DISTANCE 15 // Distance to safely switch off probe after it was activated
 #define Z_PROBE_REPETITIONS 2 //5 Repetitions for probing at one point.
 /** Distance between nozzle and bed when probe triggers. */
  //menší hodnota = dál od podložky
  //čím větší číslo tím menší mezera mezi podložkou a tryskou
-#define Z_PROBE_HEIGHT 19.9//19.57//19.8//19.3 //-21.55
+#define Z_PROBE_HEIGHT 0.3 //19.9//19.57//19.8//19.3 //-21.55
 /** These scripts are run before resp. after the z-probe is done. Add here code to activate/deactivate probe if needed. */
 #define Z_PROBE_START_SCRIPT "M340 P0 S2500"
 #define Z_PROBE_FINISHED_SCRIPT "M340 P0 S610 R1000"
